@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <!-- NAVEGACIÓN -->
     <nav class="navbar">
@@ -16,9 +18,21 @@
             </div>
             <ul class="nav-menu">
                 <li><a href="#inicio" class="nav-link">Inicio</a></li>
-                <li><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
-                <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
-                <li><a href="#Documentación" class="nav-link">Habilidades</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Documentación <i
+                            class="fas fa-chevron-down nav-arrow"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="codigo-de-app.html"><i class="fas fa-code"></i> Código de App</a></li>
+                        <li class="nested-dropdown">
+                            <a href="politicas-de-app.html"><i class="fas fa-shield-alt"></i> Políticas de App <i
+                                    class="fas fa-chevron-right nested-arrow"></i></a>
+                            <ul class="nested-menu">
+                                <li><a href="politicas-de-app.html#tvstreaming"><i class="fas fa-tv"></i>
+                                        TVStreaming</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
                 <li><a href="#contacto" class="nav-link">Contacto</a></li>
             </ul>
             <div class="hamburger">
@@ -37,78 +51,6 @@
             <a href="#contacto" class="btn btn-primary">Contáctame</a>
         </div>
         <div class="hero-shape"></div>
-    </section>
-
-    <!-- SECCIÓN SOBRE MÍ -->
-    <section id="sobre-mi" class="about">
-        <div class="container">
-            <h2 class="section-title">Sobre mí</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>Soy una desarrolladora web apasionada por la tecnología y el diseño. Me encanta crear soluciones web innovadoras que resuelvan problemas reales.</p>
-                    <p>Con experiencia en HTML, CSS, JavaScript y herramientas modernas, me dedico a desarrollar sitios web responsivos y atractivos.</p>
-                    <p>Siempre estoy en búsqueda de nuevos desafíos para mejorar mis habilidades y contribuir a proyectos emocionantes.</p>
-                </div>
-                <div class="about-image">
-                    <div class="placeholder-image">
-                        <i class="fas fa-user"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN PROYECTOS -->
-    <section id="proyectos" class="projects">
-        <div class="container">
-            <h2 class="section-title">Mis Proyectos</h2>
-            <div class="projects-grid">
-                <!-- Proyecto 1 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-laptop"></i>
-                    </div>
-                    <h3>Proyecto 1: E-commerce</h3>
-                    <p>Una tienda online moderna con carrito de compras, filtros de productos y diseño responsivo.</p>
-                    <div class="project-tags">
-                        <span class="tag">HTML</span>
-                        <span class="tag">CSS</span>
-                        <span class="tag">JavaScript</span>
-                    </div>
-                    <a href="#" class="project-link">Ver proyecto →</a>
-                </div>
-
-                <!-- Proyecto 2 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-mobile"></i>
-                    </div>
-                    <h3>Proyecto 2: Aplicación de Tareas</h3>
-                    <p>Una app para gestionar tareas diarias con almacenamiento local y interfaz intuitiva.</p>
-                    <div class="project-tags">
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">CSS Grid</span>
-                        <span class="tag">LocalStorage</span>
-                    </div>
-                    <a href="#" class="project-link">Ver proyecto →</a>
-                </div>
-
-                <!-- Proyecto 3 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Proyecto 3: Dashboard</h3>
-                    <p>Un panel de análisis con gráficos interactivos y datos en tiempo real.</p>
-                    <div class="project-tags">
-                        <span class="tag">API REST</span>
-                        <span class="tag">Gráficos</span>
-                        <span class="tag">Responsivo</span>
-                    </div>
-                    <a href="#" class="project-link">Ver proyecto →</a>
-                </div>
-            </div>
-        </div>
     </section>
 
     <!-- SECCIÓN HABILIDADES -->
@@ -160,7 +102,7 @@
         <div class="container">
             <h2 class="section-title">Contacto</h2>
             <p class="contact-subtitle">¿Hablamos? Envíame un mensaje</p>
-            
+
             <form class="contact-form" id="contactForm">
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
@@ -197,12 +139,14 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Portafolio de Dina. Todos los derechos reservados.</p>
+            <p>&copy; 2026 Portafolio de LAQ.Dev. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <!-- SCRIPTS -->
-    <script src="js/main.js"></script>
+    <script src="js/utils.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/main.js"></script>
 </body>
+
 </html>

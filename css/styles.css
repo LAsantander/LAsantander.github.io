@@ -99,6 +99,85 @@ body {
     width: 100%;
 }
 
+/* --- Menú Desplegable (Dropdown) --- */
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-arrow, .nested-arrow {
+    font-size: 0.75rem;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-menu, .nested-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    min-width: 220px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1100;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.nested-dropdown {
+    position: relative;
+}
+
+.nested-menu {
+    top: 0;
+    left: 100%;
+    margin-left: 2px;
+}
+
+.nav-dropdown:hover > .dropdown-menu,
+.nested-dropdown:hover > .nested-menu,
+.nav-dropdown.active > .dropdown-menu,
+.nested-dropdown.active > .nested-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.nav-dropdown:hover .nav-arrow,
+.nested-dropdown:hover .nested-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu li a,
+.nested-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.7rem 1.2rem;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.dropdown-menu li a i,
+.nested-menu li a i {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    width: 16px;
+}
+
+.dropdown-menu li a:hover,
+.nested-menu li a:hover {
+    background: #f4f4fe;
+    color: var(--primary-color);
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -537,6 +616,32 @@ section {
 
     .nav-menu.active {
         left: 0;
+    }
+
+    .dropdown-menu, .nested-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        background: #f9fafb;
+        width: 100%;
+        padding: 0.5rem 0;
+        display: none;
+    }
+
+    .nav-dropdown.active > .dropdown-menu,
+    .nested-dropdown.active > .nested-menu {
+        display: block;
+    }
+
+    .dropdown-menu li a {
+        padding-left: 2.5rem;
+    }
+
+    .nested-menu li a {
+        padding-left: 4rem;
     }
 
     .hero h2 {
