@@ -65,7 +65,7 @@ function initializeDropdownMenu() {
  * Inicializa el desplazamiento suave (Smooth Scroll)
  */
 function initializeSmoothScroll() {
-    const internalLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
+    const internalLinks = document.querySelectorAll('a[href^="#"]:not([href="#"]):not([target="_blank"])');
 
     internalLinks.forEach(anchor => {
         anchor.addEventListener('click', function(e) {
